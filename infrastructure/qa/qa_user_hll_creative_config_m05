@@ -1,0 +1,38 @@
+Select
+    a.ACTIVITY_DATE,
+    case when a.ACTIVITY_DATE = ma.ACTIVITY_DATE then 'Correct' else 'Incorrect' end as activity_date_flag,
+    a.IDBUSINESS_ENTITY,
+    case when a.IDBUSINESS_ENTITY = ma.CLIENT_BEID then 'Correct' else 'Incorrect' end as idbusiness_entity_flag,
+    a.IDCAMPAIGN,
+    case when a.IDCAMPAIGN = ma.IDCAMPAIGN then 'Correct' else 'Incorrect' end as idcampaign_flag,
+    a.IDSITE,
+    case when a.IDSITE = ma.IDSITE then 'Correct' else 'Incorrect' end as idsite_flag,
+    a.IDPLACEMENT,
+    case when a.IDPLACEMENT = ma.IDPLACEMENT then 'Correct' else 'Incorrect' end as idplacement_flag,
+    a.IDCREATIVE,
+    case when a.IDCREATIVE = ma.IDCREATIVE then 'Correct' else 'Incorrect' end as idcreative_flag,
+    a.IDCREATIVE_CONFIG,
+    case when a.IDCREATIVE_CONFIG = ma.IDCREATIVE_CONFIG then 'Correct' else 'Incorrect' end as idcreative_config_flag,
+    a.IDEVENT_TYPE,
+    case when a.IDEVENT_TYPE = ma.IDEVENT_TYPE then 'Correct' else 'Incorrect' end as idevent_type_flag,
+    a.USER_HLL,
+    case when a.USER_HLL = ma.USER_HLL then 'Correct' else 'Incorrect' end as user_hll_flag,
+    a.MODIFIED_USER_HLL,
+    case when a.MODIFIED_USER_HLL = ma.MODIFIED_USER_HLL then 'Correct' else 'Incorrect' end as modified_user_hll_flag,
+    a.USER_FTRACK_HLL,
+    case when a.USER_FTRACK_HLL = ma.USER_FTRACK_HLL then 'Correct' else 'Incorrect' end as user_ftrack_hll_flag
+From 
+    "FT_DB_DEV"."AGGREGATIONS"."USER_HLL_CREATIVE_CONFIG_M05" as a
+Left Join
+    "FT_DB_DEV"."MASTER_AGGREGATIONS"."USER_HLL_CREATIVE_CONFIG_M05" as ma
+    On a.ACTIVITY_DATE = ma.ACTIVITY_DATE
+    And a.IDBUSINESS_ENTITY = ma.CLIENT_BEID
+    And a.IDCAMPAIGN = ma.IDCAMPAIGN
+    And a.IDSITE = ma.IDSITE
+    And a.IDPLACEMENT = ma.IDPLACEMENT
+    And a.IDCREATIVE = ma.IDCREATIVE
+    And a.IDCREATIVE_CONFIG = ma.IDCREATIVE_CONFIG
+    And a.IDEVENT_TYPE = ma.IDEVENT_TYPE
+    And a.USER_HLL = ma.USER_HLL
+    And a.MODIFIED_USER_HLL = ma.MODIFIED_USER_HLL
+    And a.USER_FTRACK_HLL = ma.USER_FTRACK_HLL

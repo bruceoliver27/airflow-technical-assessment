@@ -1,0 +1,17 @@
+schedule_interval: "30 * * * *"
+tables:
+    - click
+    - imp
+    - info
+    - seg
+    - spot
+    - state
+    - track
+    - akamai_int
+    - highwinds_int
+int_tables:
+    - highwinds_int
+    - akamai_int
+stage_sql_path: adlogs/load_raw_logs
+mii_table_path: 'mii/{}'
+mii_manifest_path: 'manifest/complete_*'

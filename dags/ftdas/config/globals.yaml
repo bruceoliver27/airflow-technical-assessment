@@ -1,0 +1,15 @@
+default_args:
+    owner: ftdas
+    depends_on_past: false
+    retries: 1
+    start_date: "2019-04-01"
+    max_retry_delay: 120
+    retry_exponential_backoff: true
+ftdas_snowflake_conn_id: snowflake_ftdas
+ftdas_aws_conn_id: aws_ftdas
+ftdas_aws_rl_bucket_name: flashtalking-adserve-logs-eu-west-1
+ftdas_aws_ri_conn_id: aws_ftdas_ri
+ftdas_aws_ri_bucket_name: raw-ingester-output-eu-west-1-qa
+central_mysql_dim_dump_bucket: bucket_placeholder
+central_mysql_conn_id: mysql_ftdas_central
+
